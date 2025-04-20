@@ -1,4 +1,4 @@
-const PASSCODE = "Wempecker6"; // Replace with your own passcode
+const PASSCODE = "Wempecker6";
 
 function authenticate(redirectUrl) {
     const input = document.getElementById("passcode").value;
@@ -8,15 +8,16 @@ function authenticate(redirectUrl) {
         localStorage.setItem("isAuthenticated", "true");
         error.textContent = "";
         let redirect = redirectUrl || "/wiki/";
-        console.log("Initial redirect value:", redirect);
         if (redirect.startsWith('./')) {
             redirect = redirect.substring(2);
-            console.log("Redirect after removing leading ./:", redirect);
         }
+        // Replace 'your-repo-name' with your actual repository name
+        const basePath = window.location.pathname.startsWith('/wempecker') ? '/wempecker' : '';
+        redirect = `${basePath}/${redirect}`.replace(/\/+/g, '/'); // Normalize slashes
         console.log("Final redirect URL:", redirect);
         window.location.href = redirect;
     } else {
-        error.textContent = "Incorrect code";
+        error.textContent = "Incorrect passcode";
     }
 }
 
@@ -26,5 +27,5 @@ function isAuthenticated() {
 
 function logout() {
     localStorage.removeItem("isAuthenticated");
-    window.location.href = "../index.html";
+    window.location.href = "/wempecker/index.html"; // Update with repo name
 }

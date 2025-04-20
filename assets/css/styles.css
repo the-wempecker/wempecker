@@ -651,6 +651,8 @@ body {
     width: 90%;
     box-shadow: 0 2px 10px var(--shadow-color);
     text-align: center;
+    position: relative; /* Ensure close button is positioned relative to this */
+    overflow: visible; /* Prevent clipping */
 }
 .auth-modal-content .section-heading {
     margin-bottom: var(--spacing-sm);
@@ -666,12 +668,15 @@ body {
 }
 .auth-modal-close {
     position: absolute;
-    top: var(--spacing-sm);
-    right: var(--spacing-sm);
+    top: var(--spacing-sm, 8px); /* Fallback if undefined */
+    right: var(--spacing-sm, 8px); /* Fallback if undefined */
     font-size: 1.2rem;
     cursor: pointer;
-    color: var(--primary-color);
+    color: var(--primary-color, #000); /* Fallback if undefined */
+    font-family: Arial, sans-serif; /* Ensure character renders */
+    display: block; /* Ensure visibility */
+    z-index: 10; /* Ensure above other content */
 }
 .auth-modal-close:hover {
-    color: var(--link-color);
+    color: var(--link-color, #007bff); /* Fallback if undefined */
 }
