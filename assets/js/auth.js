@@ -43,5 +43,5 @@ function isAuthenticated() {
 
 function logout() {
     localStorage.removeItem("isAuthenticated");
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
 }

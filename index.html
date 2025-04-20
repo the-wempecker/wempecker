@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Wempecker</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="header">
         <div class="title">
             <div class="title-main">
-                <img src="/assets/logos/logo_left.jpg" alt="Logo" class="logo">
+                <img src="./assets/logos/logo_left.jpg" alt="Logo" class="logo">
                 THE WEMPECKER
-                <img src="/assets/logos/logo_right.svg" alt="Logo" class="logo">
+                <img src="./assets/logos/logo_right.svg" alt="Logo" class="logo">
             </div>
             <div class="title-online">Fake News You Can Trust</div>
         </div>
@@ -33,10 +33,10 @@
                 <h3 class="xblog-section-heading">Legendary Newsletters</h3>
                 <ul class="xblog-list no-bullets">
                     <li class="list-item">
-                        <a href="/spring-2025/" class="link-base">VOL. 19 Spring 2025 "You Can't Fool Mother Nature, But You Can Bribe Her"</a>
+                        <a href="./spring-2025/" class="link-base">VOL. 19 Spring 2025 "You Can't Fool Mother Nature, But You Can Bribe Her"</a>
                     </li>
                     <li class="list-item">
-                        <a href="/summer-2025/" class="link-base">VOL. 20 Summer 2025 "test"</a>
+                        <a href="./summer-2025/" class="link-base">VOL. 20 Summer 2025 "test"</a>
                     </li>
                 </ul>
             </div>
@@ -48,28 +48,28 @@
                     <li class="ringtone-item list-item">
                         <span class="ringtone-name">Giri: "Get It From the Google"</span>
                         <audio class="ringtone-player" controls>
-                            <source src="/assets/newsletters/sample_audio.mp3" type="audio/mpeg">
+                            <source src="./assets/newsletters/sample_audio.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </li>
                     <li class="ringtone-item list-item">
                         <span class="ringtone-name">Giri: "Make the Monkey Dance"</span>
                         <audio class="ringtone-player" controls>
-                            <source src="/assets/newsletters/sample_audio.mp3" type="audio/mpeg">
+                            <source src="./assets/newsletters/sample_audio.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </li>
                     <li class="ringtone-item list-item">
                         <span class="ringtone-name">Giri: "Time To Turn Your Brains OFF"</span>
                         <audio class="ringtone-player" controls>
-                            <source src="/assets/newsletters/sample_audio.mp3" type="audio/mpeg">
+                            <source src="./assets/newsletters/sample_audio.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </li>
                     <li class="ringtone-item list-item">
                         <span class="ringtone-name">Inverter: "I Am Supreme Overlord"</span>
                         <audio class="ringtone-player" controls>
-                            <source src="/assets/newsletters/sample_audio.mp3" type="audio/mpeg">
+                            <source src="./assets/newsletters/sample_audio.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </li>
@@ -78,7 +78,7 @@
         </div>
     </main>
     <div class="wempecker-fan">
-        <img src="/assets/logos/rotating_output.gif" alt="Wempecker Fan">
+        <img src="./assets/logos/rotating_output.gif" alt="Wempecker Fan">
         <p>New invention: Hypnotizing motor, no magnets, no coils, patent pending!</p>
     </div>
 
@@ -88,18 +88,18 @@
             <span class="auth-modal-close" onclick="closeAuthModal()">×</span>
             <h2 class="section-heading">Enter Access Code</h2>
             <input type="password" id="passcode" placeholder="Enter code" class="input-base">
-            <button onclick="authenticate('/wempecker/wiki/')" class="link-base">Unlock</button>
+            <button onclick="authenticate('./wiki/')" class="link-base">Unlock</button>
             <p id="error" class="error-message"></p>
         </div>
     </div>
     <footer class="footer">
         <p>© Wempecker 2025</p>
         <div class="wiki-button-container">
-            <a href="#" class="link-base wiki-button" onclick="openAuthModal('/wempecker/wiki/')">Wiki</a>
+            <a href="#" class="link-base wiki-button" onclick="openAuthModal('./wiki/')">Wiki</a>
         </div>
     </footer>
-    <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/auth.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/auth.js"></script>
     <script>
         function openAuthModal(redirectUrl) {
             document.getElementById('authModal').style.display = 'flex';
