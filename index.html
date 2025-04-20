@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Wempecker</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -82,36 +83,55 @@
         <p>New invention: Hypnotizing motor, no magnets, no coils, patent pending!</p>
     </div>
 
-    <!-- Authentication Modal -->
-    <div class="auth-modal" id="authModal">
-        <div class="auth-modal-content">
-            <span class="auth-modal-close" onclick="closeAuthModal()">×</span>
-            <h2 class="section-heading">Enter Access Code</h2>
+ <!-- Authentication Modal -->
+ <div class="auth-modal" id="authModal">
+    <div class="auth-modal-content">
+        <span class="auth-modal-close" onclick="closeAuthModal()">×</span>
+        <h2 class="section-heading">Enter Access Code</h2>
+        <div class="password-container">
             <input type="password" id="passcode" placeholder="Enter code" class="input-base">
-            <button onclick="authenticate('./wiki/')" class="link-base">Unlock</button>
-            <p id="error" class="error-message"></p>
+            <span class="password-toggle" onclick="togglePasswordVisibility()">
+                <i class="fas fa-eye"></i>
+            </span>
         </div>
+        <button onclick="authenticate('./wiki/')" class="link-base">Unlock</button>
+        <p id="error" class="error-message"></p>
     </div>
-    <footer class="footer">
-        <p>© Wempecker 2025</p>
-        <div class="wiki-button-container">
-            <a href="#" class="link-base wiki-button" onclick="openAuthModal('./wiki/')">Wiki</a>
-        </div>
-    </footer>
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/auth.js"></script>
-    <script>
-        function openAuthModal(redirectUrl) {
-            document.getElementById('authModal').style.display = 'flex';
-            document.getElementById('passcode').focus();
-            document.getElementById('authModal').dataset.redirect = redirectUrl;
-        }
+</div>
+<footer class="footer">
+    <p>© Wempecker 2025</p>
+    <div class="wiki-button-container">
+        <a href="#" class="link-base wiki-button" onclick="openAuthModal('./wiki/')">Wiki</a>
+    </div>
+</footer>
+<script src="./assets/js/script.js"></script>
+<script src="./assets/js/auth.js"></script>
+<script>
+    function openAuthModal(redirectUrl) {
+        document.getElementById('authModal').style.display = 'flex';
+        document.getElementById('passcode').focus();
+        document.getElementById('authModal').dataset.redirect = redirectUrl;
+    }
 
-        function closeAuthModal() {
-            document.getElementById('authModal').style.display = 'none';
-            document.getElementById('passcode').value = '';
-            document.getElementById('error').textContent = '';
+    function closeAuthModal() {
+        document.getElementById('authModal').style.display = 'none';
+        document.getElementById('passcode').value = '';
+        document.getElementById('error').textContent = '';
+    }
+
+    function togglePasswordVisibility() {
+        const passcodeInput = document.getElementById('passcode');
+        const toggleIcon = document.querySelector('.password-toggle i');
+        if (passcodeInput.type === 'password') {
+            passcodeInput.type = 'text';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        } else {
+            passcodeInput.type = 'password';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
         }
-    </script>
+    }
+</script>
 </body>
 </html>
