@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wempecker Wiki</title>
+    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <style>
+        .code-block-wrapper {
+            position: relative;
+            margin-bottom: 1.5rem;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .code-header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: #e0e0e0;
+            padding: 0.25rem 0.75rem;
+        }
+        .code-header button {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+        .code-header button i {
+            margin-right: 0.25rem;
+        }
+        pre code {
+            display: block;
+            padding: 1rem;
+            background-color: #f5f5f5;
+            color: #333;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        }
+        .free-space {
+            font-weight: bold;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="title-bar">
+        <div class="title-bar-content">
+            <h1 class="title-bar-text">The Wempecker</h1>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="xblog-post-container">
+            <h1 class="xblog-post-title">The Wempecker: Article Writing Guide</h1>
+            <div class="xblog-post-meta">
+                Updated on April 20, 2025 by The Wempecker Crew
+            </div>
+
+            <div class="content">
+                <div class="main-column">
+                    <div class="xblog-post-content">
+                        <blockquote class="xblog-quote">"Documentation is the only thing that doesn’t break in a lab explosion." - Prof. Jahns</blockquote>
+
+                        <h2 class="xblog-section-heading">Overview</h2>
+                        <p>This guide explains how to create articles for The Wempecker using Markdown and HTML. Articles are written in Markdown (<code>content.md</code>) and embedded into an HTML template (<code>index.html</code>). You’ll use Visual Studio Code (VSCode) with the Live Server extension to preview your work locally. This guide assumes static HTML rendering without dynamic JavaScript parsing.</p>
+
+                        <h2 class="xblog-section-heading">Folder Structure</h2>
+                        <div class="code-block-wrapper">
+                            <pre><code>fall-2025/
+├── assets/
+│   └── sample.png
+├── content.md
+└── index.html</code></pre>
+                        </div>
+                        <ul class="xblog-list">
+                            <li class="list-item"><code>assets/</code>: Stores images and other media.</li>
+                            <li class="list-item"><code>content.md</code>: Contains the article content in Markdown, which you’ll convert to HTML manually or via a tool.</li>
+                            <li class="list-item"><code>index.html</code>: The HTML template that displays the article.</li>
+                        </ul>
+
+                        <h2 class="xblog-section-heading">Setting Up Your Environment</h2>
+                        <ol class="xblog-list">
+                            <li><strong>Install VSCode</strong>: Download and install <a href="https://code.visualstudio.com/">Visual Studio Code</a>.</li>
+                            <li><strong>Add Live Server Extension</strong>:
+                                <ul class="xblog-list">
+                                    <li>Open VSCode, go to the Extensions view (<code>Ctrl+Shift+X</code> or <code>Cmd+Shift+X</code> on Mac).</li>
+                                    <li>Search for “Live Server” by Ritwick Dey and install it.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Create the Project</strong>:
+                                <ul class="xblog-list">
+                                    <li>Create a new folder (e.g., <code>fall-2025/</code>) for your article.</li>
+                                    <li>Ensure the parent directory contains <code>assets/</code> with subfolders like <code>icons/</code> (for favicon) and <code>css/</code> (for <code>styles.css</code>).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Preview Locally</strong>:
+                                <ul class="xblog-list">
+                                    <li>Open your project folder in VSCode.</li>
+                                    <li>Right-click <code>index.html</code> and select “Open with Live Server” (or use the “Go Live” button in the VSCode status bar).</li>
+                                    <li>Live Server will launch a browser at <code>http://localhost:5500</code> (port may vary).</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h2 class="xblog-section-heading">Writing Markdown (content.md)</h2>
+                        <p>The <code>content.md</code> file uses GitHub Flavored Markdown (GFM) with delimiters to organize content for the main column, sidebar, and footer. You’ll need to convert this Markdown to HTML manually or use a tool (e.g., VSCode’s Markdown Preview or an online converter like <a href="https://markdowntohtml.com/">Markdown to HTML</a>) to embed it in <code>index.html</code>.</p-powered-by: https://www.flaticon.com/free-icon/copy_1511672?term=copy+icon
+
+                        <h3>Example Markdown (content.md)</h3>
+                        <div class="code-block-wrapper">
+                            <div class="code-header">
+                                <button onclick="copyCode(this)" aria-label="Copy code to clipboard"><i class="fas fa-copy"></i>Copy</button>
+                            </div>
+                            <pre><code># Wempecker's Wildest Tales - Vol. 20
+**Posted on April 20, 2025 by The Wempecker Crew**
+
+> "Chaos is just innovation in disguise." - Prof. Giri
+
+<!-- Main Column Start -->
+## Breaking News: WEMPEC Copier Goes Rogue
+The copier has gone rogue, printing memes. Students panic!
+
+![Copier printing memes](assets/sample.png)
+*Figure 1: The Copier Declaring Itself Supreme Overlord of Lab 42*
+
+## Wempecker Bingo Madness
+| B | I | N | G | O |
+|---|---|---|---|---|
+| Copier memes | Grad tears | Free Space | Giri escapes | Lab fire |
+<!-- Main Column End -->
+
+<!-- Sidebar Start -->
+## For Sale
+- **Rogue Copier**: May challenge your authority. Call Jahns.
+
+## Coupon: Free Print
+> Redeem at Grainger. May print thesis in Comic Sans.
+<!-- Sidebar End -->
+
+## Contributors
+**Editor**: The Little King  
+**Writers**: Chaos Squad, Giri's Intern
+</code></pre>
+                        </div>
+
+                        <h3>Markdown Formatting Rules</h3>
+                        <ul class="xblog-list">
+                            <li class="list-item"><strong>Header</strong>: Start with a level-1 heading (<code>#</code>) for the article title, followed by metadata (e.g., date and author) in bold (<code>**text**</code>).</li>
+                            <li class="list-item"><strong>Quote</strong>: Add a blockquote (<code>> text</code>) for a witty opening quote.</li>
+                            <li class="list-item"><strong>Delimiters</strong>: Use comments to separate sections:
+                                <ul class="xblog-list">
+                                    <li><code>&lt;!-- Main Column Start --&gt;</code> and <code>&lt;!-- Main Column End --&gt;</code> for main content.</li>
+                                    <li><code>&lt;!-- Sidebar Start --&gt;</code> and <code>&lt;!-- Sidebar End --&gt;</code> for sidebar content.</li>
+                                    <li>Content after <code>&lt;!-- Sidebar End --&gt;</code> is treated as footer content (e.g., contributors).</li>
+                                </ul>
+                            </li>
+                            <li class="list-item"><strong>Images</strong>: Use <code>![Alt text](path/to/image)</code> with descriptive alt text for accessibility (e.g., <code>![Copier printing memes](assets/sample.png)</code>), followed by an italicized caption in a separate paragraph (<code>*Caption text*</code>). In HTML, this becomes <code>&lt;img src="path/to/image" alt="Alt text"&gt;</code> with a <code>&lt;div class="xblog-img-caption"&gt;Caption text&lt;/div&gt;</code>.</li>
+                            <li class="list-item"><strong>Tables</strong>: Use GFM table syntax (e.g., <code>| Col1 | Col2 |</code>). Ensure pipes (<code>|</code>) are aligned and include a header separator (<code>|---|---|</code>). For bingo tables, include a “Free Space” cell with class <code>free-space</code>.</li>
+                            <li class="list-item"><strong>Lists</strong>: Use <code>-</code> or <code>*</code> for unordered lists, <code>1.</code> for ordered lists. Nested lists use indentation (two spaces).</li>
+                            <li class="list-item"><strong>Links</strong>: Use <code>[text](url)</code> for hyperlinks, which become <code>&lt;a href="url"&gt;text&lt;/a&gt;</code> in HTML.</li>
+                            <li class="list-item"><strong>Coupons</strong>: Use a level-2 heading (<code>## Coupon: Title</code>) followed by a blockquote for the coupon text. In HTML, apply the <code>xblog-coupon</code> class to the resulting <code>&lt;blockquote&gt;</code>.</li>
+                            <li class="list-item"><strong>Emphasis</strong>: Use <code>*italic*</code> or <code>_italic_</code> for italics, <code>**bold**</code> or <code>__bold__</code> for bold.</li>
+                            <li class="list-item"><strong>Code</strong>: Use backticks for inline code (<code>`code`</code>) or triple backticks for code blocks (<code>```code```</code>). Escape HTML in code blocks (e.g., <code>&lt;</code> as <code>&lt;</code>).</li>
+                        </ul>
+
+                        <h3>Converting Markdown to HTML</h3>
+                        <p>Since JavaScript parsing is not used, you’ll need to convert <code>content.md</code> to HTML manually or with a tool. Steps:</p>
+                        <ol class="xblog-list">
+                            <li><strong>Use a Converter</strong>: Paste your Markdown into an online tool like <a href="https://markdowntohtml.com/">Markdown to HTML</a> or use VSCode’s Markdown Preview (<code>Ctrl+Shift+V</code> or <code>Cmd+Shift+V</code>).</li>
+                            <li><strong>Split Sections</strong>: Based on the delimiters, copy the converted HTML for the main column, sidebar, and footer into the corresponding sections of <code>index.html</code>.</li>
+                            <li><strong>Apply Classes</strong>: Add Wempecker-specific classes (e.g., <code>xblog-quote</code>, <code>xblog-table</code>) to the HTML elements as needed (see styling rules below).</li>
+                        </ol>
+
+                        <h2 class="xblog-section-heading">Creating the HTML Template (index.html)</h2>
+                        <p>The <code>index.html</code> file is a static template where you embed the converted Markdown HTML. Below is an example with the converted Markdown from the example <code>content.md</code>.</p>
+
+                        <h3>Example HTML (index.html)</h3>
+                        <div class="code-block-wrapper">
+                            <div class="code-header">
+                                <button onclick="copyCode(this)" aria-label="Copy code to clipboard"><i class="fas fa-copy"></i>Copy</button>
+                            </div>
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;The Wempecker - Fall 2025&lt;/title&gt;
+    &lt;link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon"&gt;
+    &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"&gt;
+    &lt;link rel="stylesheet" href="../assets/css/styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="title-bar"&gt;
+        &lt;div class="title-bar-content"&gt;
+            &lt;h1 class="title-bar-text"&gt;The Wempecker - Fall 2025&lt;/h1&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;main class="main-content"&gt;
+        &lt;div class="xblog-post-container"&gt;
+            &lt;h1 class="xblog-post-title"&gt;Wempecker's Wildest Tales - Vol. 20&lt;/h1&gt;
+            &lt;div class="xblog-post-meta"&gt;
+                Posted on April 20, 2025 by The Wempecker Crew
+            &lt;/div&gt;
+
+            &lt;div class="content"&gt;
+                &lt;div class="main-column"&gt;
+                    &lt;div class="xblog-post-content"&gt;
+                        &lt;blockquote class="xblog-quote"&gt;"Chaos is just innovation in disguise." - Prof. Giri&lt;/blockquote&gt;
+                        &lt;h2 class="xblog-section-heading"&gt;Breaking News: WEMPEC Copier Goes Rogue&lt;/h2&gt;
+                        &lt;p&gt;The copier has gone rogue, printing memes. Students panic!&lt;/p&gt;
+                        &lt;div class="xblog-image-wrapper"&gt;
+                            &lt;img src="assets/sample.png" alt="Copier printing memes" class="xblog-img-fixed"&gt;
+                            &lt;div class="xblog-img-caption"&gt;Figure 1: The Copier Declaring Itself Supreme Overlord of Lab 42&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;h2 class="xblog-section-heading"&gt;Wempecker Bingo Madness&lt;/h2&gt;
+                        &lt;table class="xblog-table"&gt;
+                            &lt;tr&gt;
+                                &lt;th class="xblog-table-header"&gt;B&lt;/th&gt;
+                                &lt;th class="xblog-table-header"&gt;I&lt;/th&gt;
+                                &lt;th class="xblog-table-header"&gt;N&lt;/th&gt;
+                                &lt;th class="xblog-table-header"&gt;G&lt;/th&gt;
+                                &lt;th class="xblog-table-header"&gt;O&lt;/th&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td class="xblog-table-cell"&gt;Copier memes&lt;/td&gt;
+                                &lt;td class="xblog-table-cell"&gt;Grad tears&lt;/td&gt;
+                                &lt;td class="xblog-table-cell free-space"&gt;Free Space&lt;/td&gt;
+                                &lt;td class="xblog-table-cell"&gt;Giri escapes&lt;/td&gt;
+                                &lt;td class="xblog-table-cell"&gt;Lab fire&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="sidebar-column"&gt;
+                    &lt;div class="xblog-sidebar-content"&gt;
+                        &lt;h2 class="xblog-section-heading"&gt;For Sale&lt;/h2&gt;
+                        &lt;ul class="xblog-list"&gt;
+                            &lt;li class="list-item"&gt;&lt;strong&gt;Rogue Copier&lt;/strong&gt;: May challenge your authority. Call Jahns.&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;h2 class="xblog-section-heading"&gt;Coupon: Free Print&lt;/h2&gt;
+                        &lt;blockquote class="xblog-coupon"&gt;Redeem at Grainger. May print thesis in Comic Sans.&lt;/blockquote&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="footer-column"&gt;
+                &lt;div class="xblog-footer-content"&gt;
+                    &lt;div class="xblog-contributors"&gt;
+                        &lt;h2 class="xblog-section-heading"&gt;Contributors&lt;/h2&gt;
+                        &lt;p&gt;&lt;strong&gt;Editor&lt;/strong&gt;: The Little King&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Writers&lt;/strong&gt;: Chaos Squad, Giri's Intern&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;a href="../" class="xblog-back-link"&gt;← Back to Wempeckerhome&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                        </div>
+
+                        <h3>Customizing index.html</h3>
+                        <ul class="xblog-list">
+                            <li class="list-item"><strong>Title</strong>: Update the <code>&lt;title&gt;</code> tag and the header’s <code>h1.title-bar-text</code> to reflect the article’s season and year (e.g., “The Wempecker - Fall 2025”).</li>
+                            <li class="list-item"><strong>Metadata</strong>: Update the <code>.xblog-post-title</code> and <code>.xblog-post-meta</code> to match the article’s title and publication date.</li>
+                            <li class="list-item"><strong>Content</strong>: Paste the converted Markdown HTML into the <code>.xblog-post-content</code>, <code>.xblog-sidebar-content</code>, and <code>.xblog-footer-content</code> sections.</li>
+                            <li class="list-item"><strong>Assets</strong>: Ensure the favicon and CSS paths are correct relative to your folder structure (e.g., <code>../assets/icons/favicon.ico</code>).</li>
+                        </ul>
+
+                        <h3>Styling Rules</h3>
+                        <p>Apply these classes to the converted HTML to match The Wempecker’s style:</p>
+                        <ul class="xblog-list">
+                            <li class="list-item"><code>xblog-quote</code>: Add to <code>&lt;blockquote&gt;</code> elements.</li>
+                            <li class="list-item"><code>xblog-image-wrapper</code>: Wrap <code>&lt;img&gt;</code> and caption in a <code>&lt;div&gt;</code>.</li>
+                            <li class="list-item"><code>xblog-img-fixed</code>: Add to <code>&lt;img&gt;</code> for styling.</li>
+                            <li class="list-item"><code>xblog-img-caption</code>: Add to the caption <code>&lt;div&gt;</code>.</li>
+                            <li class="list-item"><code>xblog-table</code>: Add to <code>&lt;table&gt;</code> elements.</li>
+                            <li class="list-item"><code>xblog-table-header</code>: Add to <code>&lt;th&gt;</code> elements.</li>
+                            <li class="list-item"><code>xblog-table-cell</code>: Add to <code>&lt;td&gt;</code> elements; add <code>free-space</code> for “Free Space” cells (e.g., <code>.free-space { font-weight: bold; background-color: #e0e0e0; }</code>).</li>
+                            <li class="list-item"><code>xblog-list</code>: Add to <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> elements.</li>
+                            <li class="list-item"><code>list-item</code>: Add to <code>&lt;li&gt;</code> elements.</li>
+                            <li class="list-item"><code>xblog-section-heading</code>: Add to <code>&lt;h2&gt;</code> elements.</li>
+                            <li class="list-item"><code>xblog-coupon</code>: Add to <code>&lt;blockquote&gt;</code> elements following a coupon heading.</li>
+                            <li class="list-item"><code>xblog-contributors</code>: Add to the footer <code>&lt;div&gt;</code> containing the contributors section.</li>
+                        </ul>
+
+                        <h2 class="xblog-section-heading">How to Write and Test Articles</h2>
+                        <ol class="xblog-list">
+                            <li><strong>Create a New Folder</strong>: Make a folder (e.g., <code>fall-2025/</code>) and add <code>content.md</code> and <code>index.html</code>.</li>
+                            <li><strong>Add Assets</strong>: Place images in <code>assets/</code> (e.g., <code>assets/sample.png</code>).</li>
+                            <li><strong>Write Markdown</strong>: Follow the formatting rules above, ensuring delimiters are correctly placed.</li>
+                            <li><strong>Convert Markdown</strong>: Use a tool to convert <code>content.md</code> to HTML, then split into main, sidebar, and footer sections.</li>
+                            <li><strong>Customize HTML</strong>: Copy the example <code>index.html</code>, update the title, metadata, and paste the converted HTML with appropriate classes.</li>
+                            <li><strong>Test Locally</strong>: Open <code>index.html</code> with Live Server in VSCode to preview the article.</li>
+                            <li><strong>Link Article</strong>: Add a link to your article in the main index page under “Legendary Newsletters” (e.g., <code>&lt;a href="fall-2025/"&gt;Fall 2025&lt;/a&gt;</code>).</li>
+                            <li><strong>Debugging</strong>: Check the browser’s developer tools (<code>F12</code>) for errors. Common issues:
+                                <ul class="xblog-list">
+                                    <li>Incorrect delimiter placement in <code>content.md</code>.</li>
+                                    <li>Missing or incorrect asset paths (e.g., <code>assets/sample.png</code>).</li>
+                                    <li>Markdown syntax errors (e.g., unbalanced table pipes).</li>
+                                    <li>Missing CSS classes in the HTML.</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h2 class="xblog-section-heading">Troubleshooting</h2>
+                        <ul class="xblog-list">
+                            <li class="list-item"><strong>Content Not Displaying</strong>: Verify <code>content.md</code> was converted correctly and HTML is pasted into the right sections.</li>
+                            <li class="list-item"><strong>Images Not Displaying</strong>: Ensure image paths are relative to <code>index.html</code> (e.g., <code>assets/sample.png</code>).</li>
+                            <li class="list-item"><strong>Styling Issues</strong>: Confirm <code>styles.css</code> is loaded and all required classes are applied to the HTML.</li>
+                            <li class="list-item"><strong>Code Rendering as HTML</strong>: Ensure HTML in <code>&lt;pre&gt;&lt;code&gt;</code> blocks is escaped (e.g., <code>&lt;</code> as <code>&lt;</code>).</li>
+                            <li class="list-item"><strong>Live Server Not Working</strong>: Ensure the extension is installed and running. Try a different port if <code>5500</code> is in use (check VSCode’s status bar).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sidebar-column">
+                    <div class="xblog-sidebar-content">
+                        <h2 class="xblog-section-heading">Quick Tips</h2>
+                        <ul class="xblog-list">
+                            <li class="list-item">Preview with Live Server to catch errors.</li>
+                            <li class="list-item">Verify delimiters in <code>content.md</code>.</li>
+                            <li class="list-item">Use relative paths for assets (e.g., <code>assets/sample.png</code>).</li>
+                            <li class="list-item">Validate and escape Markdown/HTML with tools like MarkdownLint or <a href="https://www.freeformatter.com/html-escape.html">FreeFormatter</a>.</li>
+                        </ul>
+
+                        <h2 class="xblog-section-heading">Need Help?</h2>
+                        <ul class="xblog-list">
+                            <li class="list-item"><strong>Contact</strong>: Email the Wempecker Crew at <code>wempecker@wempec.edu</code>.</li>
+                            <li class="list-item"><strong>Resources</strong>: Review past newsletters in <code>assets/newsletters/</code>.</li>
+                            <li class="list-item"><strong>Markdown Guide</strong>: See <a href="https://www.markdownguide.org/basic-syntax/">Markdown Guide</a> for GFM syntax.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <div class="xblog-footer-content">
+                    <div class="xblog-contributors">
+                        <h2 class="xblog-section-heading">Contributors</h2>
+                        <p><strong>Reluctant Head Editor:</strong> The Little King, who wrote this while hiding from the rogue copier</p>
+                        <p><strong>Technical Support:</strong> T², who debugged the Markdown rendering</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../../" class="xblog-back-link">← Back to Wempeckerhome</a>
+        </div>
+    </main>
+
+    <script>
+        function copyCode(btn) {
+            const code = btn.closest('.code-block-wrapper').querySelector('pre code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i>Copied!';
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-copy"></i>Copy';
+                }, 1500);
+            });
+        }
+    </script>
+</body>
+</html>
