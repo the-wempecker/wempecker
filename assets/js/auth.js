@@ -1,21 +1,19 @@
 const PASSCODE = "Wempecker6"; // Replace with your own passcode
 
-function authenticate() {
+function authenticate(redirectUrl) {
     const input = document.getElementById("passcode").value;
     const error = document.getElementById("error");
 
     if (input === PASSCODE) {
         localStorage.setItem("isAuthenticated", "true");
         error.textContent = "";
-        // Get redirect URL from query parameter, default to wiki/wiki.html
-        let redirect = "./wiki/";
-        console.log("Initial redirect value:", redirect); // Debug: Log initial redirect
-        // Ensure redirect is relative to root
-        if (redirect.startsWith('./wiki/')) {
-            redirect = redirect.substring(1);
-            console.log("Redirect after removing leading slash:", redirect); // Debug: Log modified redirect
+        let redirect = redirectUrl || "/wiki/";
+        console.log("Initial redirect value:", redirect);
+        if (redirect.startsWith('./')) {
+            redirect = redirect.substring(2);
+            console.log("Redirect after removing leading ./:", redirect);
         }
-        console.log("Final redirect URL:", redirect); // Debug: Log final redirect
+        console.log("Final redirect URL:", redirect);
         window.location.href = redirect;
     } else {
         error.textContent = "Incorrect code";
