@@ -630,20 +630,18 @@ body {
 }
 
 
-/* Modal for authentication */
 .auth-modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     justify-content: center;
     align-items: center;
 }
-
 .auth-modal-content {
     background-color: var(--background-color);
     padding: var(--spacing-md);
@@ -654,24 +652,18 @@ body {
     box-shadow: 0 2px 10px var(--shadow-color);
     text-align: center;
 }
-
 .auth-modal-content .section-heading {
     margin-bottom: var(--spacing-sm);
 }
-
 .auth-modal-content .input-base {
     margin-bottom: var(--spacing-sm);
 }
-
 .auth-modal-content .link-base {
     margin-top: var(--spacing-sm);
 }
-
 .auth-modal-content .error-message {
     margin-top: var(--spacing-sm);
 }
-
-/* Close button for modal */
 .auth-modal-close {
     position: absolute;
     top: var(--spacing-sm);
@@ -680,7 +672,6 @@ body {
     cursor: pointer;
     color: var(--primary-color);
 }
-
 .auth-modal-close:hover {
     color: var(--link-color);
 }
