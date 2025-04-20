@@ -8,10 +8,10 @@ function authenticate() {
         localStorage.setItem("isAuthenticated", "true");
         error.textContent = "";
         // Get redirect URL from query parameter, default to wiki/wiki.html
-        let redirect = "./wiki";
+        let redirect = "./wempecker/wiki";
         console.log("Initial redirect value:", redirect); // Debug: Log initial redirect
         // Ensure redirect is relative to root
-        if (redirect.startsWith('/')) {
+        if (redirect.startsWith('/wempecker/')) {
             redirect = redirect.substring(1);
             console.log("Redirect after removing leading slash:", redirect); // Debug: Log modified redirect
         }
