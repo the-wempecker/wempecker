@@ -635,48 +635,65 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     justify-content: center;
     align-items: center;
+    overscroll-behavior: contain;
 }
 .auth-modal-content {
-    background-color: var(--background-color);
-    padding: var(--spacing-md);
-    border: 2px solid var(--primary-color);
+    background-color: var(--background-color, #fff);
+    padding: var(--spacing-md, 16px);
+    border: 2px solid var(--primary-color, #000);
     border-radius: 8px;
     max-width: 400px;
     width: 90%;
-    box-shadow: 0 2px 10px var(--shadow-color);
+    box-shadow: 0 2px 10px var(--shadow-color, rgba(0, 0, 0, 0.2));
     text-align: center;
-    position: relative; /* Ensure close button is positioned relative to this */
-    overflow: visible; /* Prevent clipping */
+    position: relative;
+    overflow: visible;
+    transform: translateZ(0);
 }
 .auth-modal-content .section-heading {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm, 8px);
+    position: relative;
+    z-index: 1;
 }
 .auth-modal-content .input-base {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm, 8px);
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 .auth-modal-content .link-base {
-    margin-top: var(--spacing-sm);
+    margin-top: var(--spacing-sm, 8px);
 }
 .auth-modal-content .error-message {
-    margin-top: var(--spacing-sm);
+    margin-top: var(--spacing-sm, 8px);
 }
 .auth-modal-close {
     position: absolute;
-    top: var(--spacing-sm, 8px); /* Fallback if undefined */
-    right: var(--spacing-sm, 8px); /* Fallback if undefined */
-    font-size: 1.2rem;
+    top: var(--spacing-sm, 8px);
+    right: var(--spacing-sm, 8px);
+    font-size: 1.5rem;
+    line-height: 1;
     cursor: pointer;
-    color: var(--primary-color, #000); /* Fallback if undefined */
-    font-family: Arial, sans-serif; /* Ensure character renders */
-    display: block; /* Ensure visibility */
-    z-index: 10; /* Ensure above other content */
+    color: var(--primary-color, #000);
+    background-color: var(--background-color, #fff);
+    padding: 4px;
+    font-family: Arial, sans-serif;
+    display: block;
+    z-index: 20;
 }
 .auth-modal-close:hover {
-    color: var(--link-color, #007bff); /* Fallback if undefined */
+    color: var(--link-color, #007bff);
+}
+@media (min-width: 768px) {
+    .auth-modal-close {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
 }
