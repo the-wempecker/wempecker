@@ -217,3 +217,46 @@ document.addEventListener('DOMContentLoaded', () => {
         styleContainer(footerContent);
     }
 });
+
+
+// Carousel functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+let autoScrollInterval;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+}
+
+function moveSlide(direction) {
+    currentSlide += direction;
+    if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    } else if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+    showSlide(currentSlide);
+}
+
+// Function to handle automatic scrolling
+function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+        moveSlide(1);
+    }, 4000); // 5000 milliseconds = 5 seconds
+}
+
+// Initialize the first slide and start auto-scrolling
+showSlide(currentSlide);
+startAutoScroll();
+
+// Optional: Stop auto-scrolling when user interacts with carousel
+const carouselContainer = document.querySelector('.carousel-container');
+carouselContainer.addEventListener('mouseenter', () => {
+    clearInterval(autoScrollInterval);
+});
+
+carouselContainer.addEventListener('mouseleave', () => {
+    startAutoScroll();
+});

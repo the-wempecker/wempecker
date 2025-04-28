@@ -734,3 +734,67 @@ body {
         opacity: 1 !important;
     }
 }
+
+/* Carousel Styles */
+.carousel-section {
+    margin-top: var(--spacing-lg);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--primary-color);
+}
+
+.carousel-slide {
+    display: none;
+    text-align: center;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--primary-color);
+    position: relative; /* Ensure image doesn't interfere with button positioning */
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(139, 0, 0, 0.8); /* Semi-transparent Wempecker red */
+    color: white;
+    border: 1px solid white; /* White border for contrast */
+    border-radius: 50%; /* Circular buttons */
+    padding: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    transition: opacity 0.3s, background-color 0.3s;
+    z-index: 10; /* Ensure buttons are above the image */
+    width: 30px; /* Fixed width for circular shape */
+    height: 30px; /* Fixed height for circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    opacity: 1;
+    background-color: rgba(139, 0, 0, 1); /* Fully opaque on hover */
+}
+
+.carousel-prev {
+    left: var(--spacing-sm); /* 10px from the left edge */
+}
+
+.carousel-next {
+    right: var(--spacing-sm); /* 10px from the right edge */
+}
