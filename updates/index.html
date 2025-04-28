@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Refresh page every 1800 seconds (30 minutes) -->
+    <meta http-equiv="refresh" content="1800">
     <title>Wempecker</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         .carousel-wrapper {
-            max-width: 800px; /* Adjust this value to your preferred maximum width */
-            margin: 0 auto; /* Centers the carousel */
-            padding: 0 20px; /* Optional: adds some spacing on the sides */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .carousel-container {
@@ -39,23 +41,23 @@
         <div class="carousel-wrapper">
             <div class="carousel-container">
                 <div class="carousel-slide">
-                    <img src="../assets/test_img/pexels-chokniti-khongchum-1197604-2280549.jpg" alt="Highlight 1" class="carousel-image">
-                    <p class="xblog-img-caption">Wempecker Team at Spring 2025 Event</p>
+                    <img src="../updates/assets/crazy.png" alt="Highlight 1" class="carousel-image">
+                    <p class="xblog-img-caption">Wempecker Team at Crazy Legs 2025</p>
                 </div>
                 <div class="carousel-slide">
                     <img src="../assets/test_img/pexels-pixabay-276267.jpg" alt="Highlight 2" class="carousel-image">
                     <p class="xblog-img-caption">Summer 2025 Chaos Unleashed</p>
                 </div>
-                <div class="carousel-slide">
+                <!-- <div class="carousel-slide">
                     <img src="../assets/test_img/pexels-shvetsa-5760878.jpg" alt="Highlight 3" class="carousel-image">
                     <p class="xblog-img-caption">Behind the Scenes: Making the Monkey Dance</p>
-                </div>
+                </div> -->
                 <button class="carousel-prev" onclick="moveSlide(-1)">❮</button>
                 <button class="carousel-next" onclick="moveSlide(1)">❯</button>
             </div>
         </div>
     </div>
 
+    <script src="../assets/js/script.js"></script>
 </body>
-<script src="../assets/js/script.js"></script>
 </html>
