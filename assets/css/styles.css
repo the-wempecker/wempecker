@@ -743,13 +743,18 @@ body {
 .carousel-container {
     position: relative;
     width: 100%;
+    max-height: 500px; /* Maintain max height for the container */
     overflow: hidden;
     border: 1px solid var(--primary-color);
+    box-sizing: border-box;
 }
 
 .carousel-slide {
     display: none;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: var(--spacing-md); /* Ensure space for caption */
 }
 
 .carousel-slide.active {
@@ -758,9 +763,14 @@ body {
 
 .carousel-image {
     max-width: 100%;
+    max-height: 450px; /* Reserve space for caption within container's max-height */
     height: auto;
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure entire image is visible without cropping */
     border: 1px solid var(--primary-color);
-    position: relative; /* Ensure image doesn't interfere with button positioning */
+    display: block;
+    margin: 0 auto; /* Center image */
+    position: relative;
 }
 
 .carousel-prev,
@@ -797,4 +807,56 @@ body {
 
 .carousel-next {
     right: var(--spacing-sm); /* 10px from the right edge */
+}
+
+.xblog-img-caption {
+    display: block;
+    font-style: italic;
+    color: var(--text-color);
+    font-size: 1rem; /* Increased font size for better visibility */
+    margin-top: var(--spacing-sm);
+    text-align: center;
+    width: 100%;
+    line-height: 1.3; /* Slightly increased line height for readability */
+    padding: var(--spacing-sm) var(--spacing-md); /* More padding for prominence */
+    box-sizing: border-box;
+    background-color: rgba(245, 245, 245, 0.9); /* Semi-transparent light gray background */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for contrast */
+    border-radius: 4px; /* Rounded corners for a polished look */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .carousel-container {
+        max-height: 400px; /* Reduce max height for smaller screens */
+    }
+    .carousel-image {
+        max-height: 350px; /* Adjust image height to fit caption */
+    }
+    .carousel-slide {
+        padding-bottom: var(--spacing-sm); /* Slightly less padding for smaller screens */
+    }
+    .xblog-img-caption {
+        font-size: 0.9rem; /* Slightly smaller but still prominent */
+        padding: var(--spacing-sm); /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .carousel-container {
+        max-height: 300px; /* Further reduce for very small screens */
+    }
+    .carousel-image {
+        max-height: 250px; /* Ensure caption remains visible */
+    }
+    .carousel-prev,
+    .carousel-next {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem; /* Smaller buttons for small screens */
+    }
+    .xblog-img-caption {
+        font-size: 0.8rem; /* Further adjust for very small screens */
+        padding: calc(var(--spacing-sm) / 2) var(--spacing-sm); /* Minimal padding */
+    }
 }
